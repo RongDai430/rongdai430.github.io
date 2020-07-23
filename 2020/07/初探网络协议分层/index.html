@@ -13,36 +13,32 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode-每日一题-lc64最小路径和">
-<meta name="twitter:title" content="Leetcode-每日一题-lc64最小路径和">
-<meta property="og:url" content="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/">
-<meta property="twitter:url" content="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/">
+<meta property="og:title" content="初探网络协议分层">
+<meta name="twitter:title" content="初探网络协议分层">
+<meta property="og:url" content="https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/">
+<meta property="twitter:url" content="https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/">
 <meta property="og:site_name" content="RD的修行之路">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-07-23T09:08:30">
+    <meta property="article:published_time" content="2020-07-23T21:27:57">
   
   
-    <meta property="article:modified_time" content="2020-07-23T09:08:30">
+    <meta property="article:modified_time" content="2020-07-23T21:27:57">
   
-  
-  
-    
-      <meta property="article:section" content="算法与数据结构">
-    
-      <meta property="article:section" content="leetcode每日一题">
-    
   
   
     
-      <meta property="article:tag" content="C&#43;&#43;">
+      <meta property="article:section" content="计算机网络">
     
-      <meta property="article:tag" content="动态规划">
+      <meta property="article:section" content="自顶向下方法">
     
-      <meta property="article:tag" content="滚动数组优化">
+  
+  
+    
+      <meta property="article:tag" content="Computer Networking">
     
   
 
@@ -63,14 +59,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/10feed9bff098424fbf41c6692232d7d?s=640">
 
 
-    <title>Leetcode-每日一题-lc64最小路径和</title>
+    <title>初探网络协议分层</title>
 
     <link rel="icon" href="https://rongdai430.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/">
+    <link rel="canonical" href="https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -210,13 +206,13 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Leetcode-每日一题-lc64最小路径和
+      初探网络协议分层
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-07-23T09:08:30&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-07-23T21:27:57&#43;08:00">
         
   七月 23, 2020
 
@@ -227,9 +223,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://rongdai430.github.io/categories/%e7%ae%97%e6%b3%95%e4%b8%8e%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">算法与数据结构</a>, 
+      <a class="category-link" href="https://rongdai430.github.io/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c">计算机网络</a>, 
     
-      <a class="category-link" href="https://rongdai430.github.io/categories/leetcode%e6%af%8f%e6%97%a5%e4%b8%80%e9%a2%98">leetcode每日一题</a>
+      <a class="category-link" href="https://rongdai430.github.io/categories/%e8%87%aa%e9%a1%b6%e5%90%91%e4%b8%8b%e6%96%b9%e6%b3%95">自顶向下方法</a>
     
   
 
@@ -239,91 +235,80 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <!-- raw HTML omitted -->
-<h2 id="题目描述leetcode-64httpsleetcode-cncomproblemsminimum-path-sum">题目描述(<a href="https://leetcode-cn.com/problems/minimum-path-sum/">leetcode-64</a>)</h2>
-<p><img src="https://rongdai430.github.io/leetcode/lc64.jpg" alt=""></p>
-<h2 id="思路分析">思路分析:</h2>
-<p>  题目要求求解从左上到右下的一条最短路径和，很容易想到用动态规划进行求解，$dp[i][j]$表示从$grid[0][0]$点走到$gird[i][j]$点时的最短路径和，其只和当前点的上方和左方有关；初始状态为$dp[0][0] = grid[0][0]$，需求解的为$dp[m-1][n-1]$，状态转移方程为
-$$dp[0][j]=grid[0][j]+dp[0][j-1]\quad\quad i=0,j&gt;0$$
-$$dp[i][0]=dp[i-1][0]+grid[i][0]\quad\quad i&gt;0,j=0$$</p>
-<p>$$dp[i][j]=min(dp[i][j-1],dp[i-1][j])+dp[i][j]\quad\quad i&gt;0,j&gt;0$$</p>
-<p> 此时时间复杂度和空间复杂度均为O(mn)，再次考虑这个DP问题，观察到每一次的状态转移只和左方和上方有关，且DP数组生成的顺序是从上到下，从左到右的，也就意味着可以进行空间的优化，也就是所谓的“<strong>滚动数组优化</strong>”。</p>
-<p> 只需要$dp[grid[0].size()]$的空间即可。在更新$dp[j]$时，$dp[j]$存储的其实是$dp[i-1][j]$，而$dp[j-1]$存储的是$dp[i][j-1]$。</p>
-<p> 仿照上述的状态转移方程可得
-$$dp[j]=grid[j]+dp[j-1]\quad\quad i=0,j&gt;0$$
-$$dp[0]=dp[j]+grid[i][0]\quad\quad i&gt;0,j=0$$</p>
-<p>$$dp[j]=min(dp[j-1],dp[j])+dp[i][j]\quad\quad i&gt;0,j&gt;0$$</p>
-<p> 最终这个算法的空间复杂度为O(n)，时间复杂度为O(mn)。</p>
-<h2 id="代码实现">代码实现</h2>
-
-  
-    
-  
-  
-    
-  
-  
-    
-  
-  
-    
-  
-
-
-<figure class="highlight cpp language-cpp">
-  <figcaption>
-    
-      <span>lc64.cpp</span><a href="https://leetcode-cn.com/submissions/detail/90571557/" target="_blank" rel="external">lc64.cpp</a>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-cpp"><code class="cpp">class Solution {
-public:
-    int minPathSum(vector&lt;vector&lt;int&gt;&gt;&amp; grid) {
-        //动态规划，采用同样大小的矩阵存储当前位置最优解
-        /*vector&lt;vector&lt;int&gt;&gt; temp = grid;
-        int m = temp.size();
-        int n = temp[0].size();
-
-        for(int i = n-1 - 1; i &gt;=0 ;i--) temp[m-1][i] &#43;= temp[m-1][i&#43;1];
-    
-        for(int i = m- 1 - 1; i &gt;= 0; i--){
-            temp[i][n-1] &#43;= temp[i&#43;1][n-1];
-            for(int j = n-1 -1 ; j &gt;= 0; j--){
-                temp[i][j] &#43;= min(temp[i][j&#43;1],temp[i&#43;1][j]);
-            }
-        }
-        return temp[0][0];*/
-    
-        vector&lt;int&gt; temp(grid[0].size());
-        temp[0] = grid[0][0];
-        for(int i = 0; i &lt; grid.size(); i&#43;&#43;)
-            for(int j = 0; j &lt; grid[0].size(); j&#43;&#43;){
-                if(i==0){
-                    if(j &gt; 0) temp[j] = temp[j - 1] &#43; grid[0][j];
-                }
-                else if (j==0){
-                    if(i &gt; 0) temp[0] = temp[0] &#43; grid[i][0];
-                }
-                else {
-                    temp[j] = min(temp[j-1],temp[j]) &#43; grid[i][j];
-                }
-            }
-        return temp[grid[0].size() - 1];
-    
-    }
-};</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
+              <p> 从今天开始开一个新坑，阅读整理《计算机网络——自顶向下方法》，对一些基础知识点以及一些有意思的课后题进行选摘。</p>
+<p> 今天就先简单了解一下一直所谓的网络协议栈和网络分层究竟是什么。</p>
+<p> 网络结构相当复杂，网络设计者以<strong>分层</strong>的方式组织协议以及实现这些协议的网络硬件和软件（与编写实际项目相仿，进行代码的封装，继承）。其中，每一层都向上一层提供了某种服务。一个协议层能够用硬件、软件或者两者相结合的方式进行实现。各层的所有协议被称为协议栈（protocol stack）。</p>
+<p> 因特网的协议栈主要由5个层次组成：</p>
+<ul>
+<li>应用层</li>
+<li>运输层</li>
+<li>网络层</li>
+<li>链路层</li>
+<li>物理层</li>
+</ul>
+<p> 下面进行简单的介绍，也就是所谓的初探</p>
+<ol>
+<li>
+<p>应用层</p>
+<blockquote>
+<p>应用层是网络应用程序以及它们的应用层协议存留的地方</p>
+</blockquote>
+<p>例如HTTP协议（提供了Web文档的请求和传输）、SMTP协议（电子邮件报文的传输）、FTP协议（两个端系统之间文件的传输）、DNS协议（域名系统）</p>
+</li>
+<li>
+<p>运输层</p>
+<blockquote>
+<p>运输层在应用程序端点之间传送<strong>应用层</strong>的报文</p>
+</blockquote>
+<p>有两种运输协议，TCP和UDP协议</p>
+<table>
+<thead>
+<tr>
+<th align="center">协议名称</th>
+<th align="center">服务</th>
+<th align="center">可靠性</th>
+<th align="center">流量控制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">TCP</td>
+<td align="center">面向连接</td>
+<td align="center">确保传递</td>
+<td align="center">提供拥塞控制机制</td>
+</tr>
+<tr>
+<td align="center">UDP</td>
+<td align="center">无连接</td>
+<td align="center">没有可靠性</td>
+<td align="center">无</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>网络层</p>
+<blockquote>
+<p>负责将称为<strong>数据报</strong>的网络分层分组从一台主机移动到另一台主机，</p>
+<p>其中报文段和目的地址由<strong>运输层</strong>协议提供（TCP/UDP）</p>
+</blockquote>
+<p>网络层包括了网际协议IP和一些路由选择协议，但一般简称为IP层</p>
+</li>
+<li>
+<p>链路层</p>
+<blockquote>
+<p><strong>网络层</strong>需要链路层的服务，链路层负责沿着路径找下一个节点</p>
+</blockquote>
+<p>例如以太网、WIFI和电缆接入网的DOCSIS协议。每一段链路可以有链路的特定链路层协议。</p>
+</li>
+<li>
+<p>物理层</p>
+<blockquote>
+<p>将<strong>链路层</strong>中的帧中的一个个比特从一个节点移动到下一个节点</p>
+</blockquote>
+<p>与链路的实际传输媒介相关（双绞铜线，单模光纤）</p>
+</li>
+</ol>
               
             </div>
           </div>
@@ -335,11 +320,7 @@ public:
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a>
-
-  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
-
-  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/%E6%BB%9A%E5%8A%A8%E6%95%B0%E7%BB%84%E4%BC%98%E5%8C%96/">滚动数组优化</a>
+  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/computer-networking/">Computer Networking</a>
 
                   </div>
                 
@@ -352,7 +333,7 @@ public:
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/" data-tooltip="初探网络协议分层">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -360,7 +341,7 @@ public:
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/06/welcome-to-tranquilpeak-0.4.8-beta/" data-tooltip="Welcome to Tranquilpeak 0.4.8-BETA">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/" data-tooltip="Leetcode-每日一题-lc64最小路径和">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -378,19 +359,19 @@ public:
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -438,7 +419,7 @@ public:
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/" data-tooltip="初探网络协议分层">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -446,7 +427,7 @@ public:
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/06/welcome-to-tranquilpeak-0.4.8-beta/" data-tooltip="Welcome to Tranquilpeak 0.4.8-BETA">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/" data-tooltip="Leetcode-每日一题-lc64最小路径和">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -464,19 +445,19 @@ public:
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -506,19 +487,19 @@ public:
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2Fleetcode-%25E6%25AF%258F%25E6%2597%25A5%25E4%25B8%2580%25E9%25A2%2598-lc64%25E6%259C%2580%25E5%25B0%258F%25E8%25B7%25AF%25E5%25BE%2584%25E5%2592%258C%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E5%2588%259D%25E6%258E%25A2%25E7%25BD%2591%25E7%25BB%259C%25E5%258D%258F%25E8%25AE%25AE%25E5%2588%2586%25E5%25B1%2582%2F">
           <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2Fleetcode-%25E6%25AF%258F%25E6%2597%25A5%25E4%25B8%2580%25E9%25A2%2598-lc64%25E6%259C%2580%25E5%25B0%258F%25E8%25B7%25AF%25E5%25BE%2584%25E5%2592%258C%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E5%2588%259D%25E6%258E%25A2%25E7%25BD%2591%25E7%25BB%259C%25E5%258D%258F%25E8%25AE%25AE%25E5%2588%2586%25E5%25B1%2582%2F">
           <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2Fleetcode-%25E6%25AF%258F%25E6%2597%25A5%25E4%25B8%2580%25E9%25A2%2598-lc64%25E6%259C%2580%25E5%25B0%258F%25E8%25B7%25AF%25E5%25BE%2584%25E5%2592%258C%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E5%2588%259D%25E6%258E%25A2%25E7%25BD%2591%25E7%25BB%259C%25E5%258D%258F%25E8%25AE%25AE%25E5%2588%2586%25E5%25B1%2582%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -631,9 +612,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/rongdai430.github.io\/2020\/07\/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C\/';
+          this.page.url = 'https:\/\/rongdai430.github.io\/2020\/07\/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82\/';
           
-            this.page.identifier = '\/2020\/07\/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc64%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C\/'
+            this.page.identifier = '\/2020\/07\/%E5%88%9D%E6%8E%A2%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%88%86%E5%B1%82\/'
           
         };
         (function() {
