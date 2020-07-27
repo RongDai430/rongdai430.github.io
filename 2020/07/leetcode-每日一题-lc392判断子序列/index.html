@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode-每日一题-lc329矩阵中的最长递增路径">
-<meta name="twitter:title" content="Leetcode-每日一题-lc329矩阵中的最长递增路径">
-<meta property="og:url" content="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/">
-<meta property="twitter:url" content="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/">
+<meta property="og:title" content="Leetcode-每日一题-lc392判断子序列">
+<meta name="twitter:title" content="Leetcode-每日一题-lc392判断子序列">
+<meta property="og:url" content="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">
+<meta property="twitter:url" content="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">
 <meta property="og:site_name" content="RD的修行之路">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-07-26T09:49:29">
+    <meta property="article:published_time" content="2020-07-27T10:00:47">
   
   
-    <meta property="article:modified_time" content="2020-07-26T09:49:29">
+    <meta property="article:modified_time" content="2020-07-27T10:00:47">
   
   
   
@@ -40,9 +40,9 @@
     
       <meta property="article:tag" content="C&#43;&#43;">
     
-      <meta property="article:tag" content="BFS">
+      <meta property="article:tag" content="双指针">
     
-      <meta property="article:tag" content="拓扑排序">
+      <meta property="article:tag" content="动态规划">
     
   
 
@@ -63,14 +63,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/10feed9bff098424fbf41c6692232d7d?s=640">
 
 
-    <title>Leetcode-每日一题-lc329矩阵中的最长递增路径</title>
+    <title>Leetcode-每日一题-lc392判断子序列</title>
 
     <link rel="icon" href="https://rongdai430.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/">
+    <link rel="canonical" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -210,15 +210,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Leetcode-每日一题-lc329矩阵中的最长递增路径
+      Leetcode-每日一题-lc392判断子序列
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-07-26T09:49:29&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-07-27T10:00:47&#43;08:00">
         
-  七月 26, 2020
+  七月 27, 2020
 
       </time>
     
@@ -240,49 +240,33 @@
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <!-- raw HTML omitted -->
-<h2 id="题目描述leetcode-329httpsleetcode-cncomproblemslongest-increasing-path-in-a-matrix">题目描述(<a href="https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/">leetcode-329</a>)</h2>
+<h2 id="题目描述leetcode-392httpsleetcode-cncomproblemsis-subsequence">题目描述(<a href="https://leetcode-cn.com/problems/is-subsequence/">leetcode-392</a>)</h2>
 <blockquote>
-<p>难度：困难</p>
+<p>难度：简单</p>
 </blockquote>
-<p>给定一个整数矩阵，找出最长递增路径的长度。</p>
-<p>对于每个单元格，你可以往上，下，左，右四个方向移动。 你不能在对角线方向上移动或移动到边界外（即不允许环绕）。</p>
+<p>给定字符串 s 和 t ，判断 s 是否为 t 的子序列。</p>
+<p>你可以认为 s 和 t 中仅包含英文小写字母。字符串 t 可能会很长（长度 ~= 500,000），而 s 是个短字符串（长度 &lt;=100）。</p>
+<p>字符串的一个子序列是原始字符串删除一些（也可以不删除）字符而不改变剩余字符相对位置形成的新字符串。（例如，&ldquo;ace&quot;是&quot;abcde&quot;的一个子序列，而&quot;aec&quot;不是）。</p>
 <p>示例1:</p>
-<pre><code>输入: nums = 
-[
-  [9,9,4],
-  [6,6,8],
-  [2,1,1]
-] 
-输出: 4 
-解释: 最长递增路径为 [1, 2, 6, 9]。
+<pre><code>s = &quot;abc&quot;, t = &quot;ahbgdc&quot;
+输出：true
 </code></pre><p>示例2:</p>
-<pre><code>输入: nums = 
-[
-  [3,4,5],
-  [3,2,6],
-  [2,2,1]
-] 
-输出: 4 
-解释: 最长递增路径是 [3, 4, 5, 6]。注意不允许在对角线方向上移动。
-</code></pre><h2 id="思路分析">思路分析:</h2>
-<p>  这是一个求路径的题目，且每一个状态只和上下左右有关，不难想到记忆化存储+搜索算法。利用动态规划的思路，这道题的状态转移方程也很容易获得。</p>
-<p>  不妨考虑对这个算法的优化，朴素来说，可以从每个点开始进行BFS/DFS，最后求出极值；换个想法，也可以考虑从初值开始递推，也就是找到动态规划的起始点。顺着这个思路，将这个矩阵和路线，看成一张有向无环图，只有<strong>小的数字能指向大的数字</strong>，也就是<strong>所有大的数字出度均为0</strong>。利用拓扑排序+BFS的想法，建立一个队列存储所有出度为0的点，对这些点进行BFS，并在每一步迭代中将这些点从图中删去（也就是将指向这些点的点的出度减一）。那么最后需要求的最长路径，也就是迭代的步数。</p>
-<ul>
-<li>
-<p>在实际写代码的时候，利用了一个C++新特性，也就是lambda表达式</p>
+<pre><code>s = &quot;axc&quot;, t = &quot;ahbgdc&quot;
+输出: false
+</code></pre><p><strong>后续挑战</strong> :</p>
+<p>如果有大量输入的 S，称作S1, S2, &hellip; , Sk 其中 k &gt;= 10亿，你需要依次检查它们是否为 T 的子序列。在这种情况下，你会怎样改变代码？</p>
+<h2 id="思路分析">思路分析:</h2>
+<p>  关于字符串问题类中求子串的问题，一般可以考虑<strong>双指针</strong>和<strong>动态规划</strong>两种算法。</p>
+<p>  对于<strong>双指针</strong>算法，$i$指向$s$数组，$j$指向$t$数组，同时向后遍历，判断是否满足子串条件即可。</p>
+<p>  双指针算法的空间复杂度为O(m+n)，时间复杂度为O(1)。</p>
 <blockquote>
-<p>auto valid = [&amp;](int x, int y){return x &gt;= 0 &amp;&amp; x &lt; matrix.size() &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; matrix[0].size();};</p>
+<p>值得注意的是，双指针算法，在每一次都需要遍历较长的$t$字符串，在面对大量的$s$字符串需要进行匹配时，非常耗时。</p>
 </blockquote>
-<p>可以便捷的定义函数，注意返回值只能是auto，不能是bool，[&amp;]表示以引用方式传递</p>
-</li>
-<li>
-<p>另外一直debug的一个地方在于，在遍历queue的时候，循环条件不能直接用queue.size()</p>
-<blockquote>
-<p>因为，for循环时，每一次进行条件判断，而queue的大小是动态的，会出现错误</p>
-</blockquote>
-</li>
-</ul>
-<p> 最终这个算法的空间复杂度为O(mn)，时间复杂度为O(mn)。</p>
+<p>   因此可以对$t$字符串进行预处理，也就是<strong>动态规划</strong>算法，在字符串匹配问题中，常用的一种dp数组定义为$dp[i][j]$表示从当前坐标$i$开始，第$j$个字符第一次出现的位置，很容易得到状态转移方程：</p>
+<p>$$dp[i][j]=dp[i+1][j],\qquad t[i]!=j$$</p>
+<p>$$dp[i][j]=i,\qquad t[i]==j$$</p>
+<p>  考虑到状态转移方程中，状态从后向前转移，因此从后向前遍历，初始化时$dp[t.size()][x]=t.size()$。对于每一个新的待匹配的子串$s$，以O(1)的时间即可以获得子串当前的字符在$t$字符串中出现的位置。</p>
+<p> 动态规划算法的空间复杂度为O(m)，时间复杂度为O(m)。</p>
 <h2 id="代码实现">代码实现</h2>
 
   
@@ -302,111 +286,95 @@
 <figure class="highlight cpp language-cpp">
   <figcaption>
     
-      <span>lc329.cpp</span><a href="https://leetcode-cn.com/submissions/detail/91492258/" target="_blank" rel="external">lc329.cpp</a>
+      <span>lc392.cpp</span><a href="https://leetcode-cn.com/submissions/detail/91824600/" target="_blank" rel="external">lc392.cpp</a>
     
   </figcaption>
   <table>
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre>
         </td>
         <td class="code">
           <pre class="code-highlight language-cpp"><code class="cpp">class Solution {
 
 public:
 
-  int mv[4][2] = {{0,1}, {0,-1}, {-1,0}, {1,0}};
+  bool isSubsequence(string s, string t) {
 
+​    //双指针算法
 
+​    /*
 
-  int longestIncreasingPath(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) {
+​    int i = 0, j = 0;
 
-​    if (matrix.size() == 0 || matrix[0].size() == 0) {
+​    while(i &lt; s.size() &amp;&amp; j &lt; t.size()){
 
-​      return 0;
+​      if(s[i] == t[j]){
 
-​    }
+​        i&#43;&#43;;
 
-​    
+​        j&#43;&#43;;
 
-​    vector&lt;vector&lt;int&gt;&gt; out(matrix.size(), vector&lt;int&gt;(matrix[0].size(),0));
+​      }
 
+​      else{
 
-
-​    auto valid = [&amp;](int x, int y){return x &gt;= 0 &amp;&amp; x &lt; matrix.size() &amp;&amp; y &gt;= 0 &amp;&amp; y &lt; matrix[0].size();};
-
-​    
-
-​    for(int i = 0; i &lt; matrix.size(); i&#43;&#43;)
-
-​      for(int j = 0; j &lt; matrix[0].size(); j&#43;&#43;)
-
-​        for(int k = 0; k &lt; 4; k&#43;&#43;){
-
-​          int _i = i &#43; mv[k][0], _j = j &#43; mv[k][1];
-
-​          if(valid(_i,_j) &amp;&amp; (matrix[_i][_j] &gt; matrix[i][j])) &#43;&#43;out[i][j];
-
-​        }
-
-
-
-​    queue&lt;pair&lt;int,int&gt;&gt; q;
-
-
-
-​    for(int i = 0; i &lt; matrix.size(); i&#43;&#43;)
-
-​      for(int j = 0; j &lt; matrix[0].size(); j&#43;&#43;)
-
-​        if (out[i][j] == 0) q.push({i,j});
-
-​    
-
-​    int ans = 0;
-
-​    while(!q.empty()){
-
-​      &#43;&#43;ans;
-
-​      int size = q.size();
-
-​      for(int i = 0; i &lt; size; i&#43;&#43;){
-
-​        auto t = q.front();
-
-​        q.pop();  //出队列
-
-​        int x = t.first, y = t.second;
-
-​        //cout&lt;&lt;ans&lt;&lt;x&lt;&lt;y&lt;&lt;endl;
-
-​        for(int k = 0; k &lt; 4; k&#43;&#43;){
-
-​          int _x = x &#43; mv[k][0], _y = y &#43; mv[k][1];
-
-​          if(valid(_x,_y) &amp;&amp; matrix[_x][_y] &lt; matrix[x][y]){
-
-​            
-
-​            --out[_x][_y];
-
-​            if(out[_x][_y] == 0) q.push({_x,_y});
-
-​            
-
-​          } 
-
-​        }
+​        j&#43;&#43;;
 
 ​      }
 
 ​    }
 
+​    return i == s.size();
+
+​    */
 
 
-​    return ans;
+
+​    //动态规划
+
+​    vector&lt;vector&lt;int&gt;&gt; dp(t.size() &#43; 1, vector&lt;int&gt;(26, 0));
+
+
+
+​    //初始化
+
+​    for(int i = 0; i &lt; 26; i&#43;&#43;) dp[t.size()][i] = t.size();
+
+
+
+​    //状态转移
+
+​    for(int i = t.size() - 1; i &gt;= 0; i--)
+
+​      for(int j = 0; j &lt; 26; j&#43;&#43;){
+
+​        if(t[i] == j &#43; &#39;a&#39;) dp[i][j] = i;
+
+​          else dp[i][j] = dp[i&#43;1][j];
+
+​      }
+
+​    
+
+​    //判断子串
+
+​    int tt = 0;
+
+​    for(int i = 0; i &lt; s.size(); i&#43;&#43;){
+
+​      tt = dp[tt][s[i] - &#39;a&#39;];
+
+​      if(tt == t.size()) return false;
+
+​      &#43;&#43;tt;
+
+​    }
+
+
+
+​    return true;
 
   }
 
@@ -429,9 +397,9 @@ public:
                     
   <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a>
 
-  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/bfs/">BFS</a>
+  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
 
-  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a>
+  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
 
                   </div>
                 
@@ -444,7 +412,7 @@ public:
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/" data-tooltip="Leetcode-每日一题-lc392判断子序列">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -452,7 +420,7 @@ public:
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E7%AC%AC198%E5%9C%BA%E5%91%A8%E8%B5%9B/" data-tooltip="Leetcode-第198场周赛">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/" data-tooltip="Leetcode-每日一题-lc329矩阵中的最长递增路径">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -470,19 +438,19 @@ public:
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -530,7 +498,7 @@ public:
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/" data-tooltip="Leetcode-每日一题-lc392判断子序列">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -538,7 +506,7 @@ public:
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E7%AC%AC198%E5%9C%BA%E5%91%A8%E8%B5%9B/" data-tooltip="Leetcode-第198场周赛">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/" data-tooltip="Leetcode-每日一题-lc329矩阵中的最长递增路径">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -556,19 +524,19 @@ public:
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -598,19 +566,19 @@ public:
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2Fleetcode-%25E6%25AF%258F%25E6%2597%25A5%25E4%25B8%2580%25E9%25A2%2598-lc329%25E7%259F%25A9%25E9%2598%25B5%25E4%25B8%25AD%25E7%259A%2584%25E6%259C%2580%25E9%2595%25BF%25E9%2580%2592%25E5%25A2%259E%25E8%25B7%25AF%25E5%25BE%2584%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2Fleetcode-%25E6%25AF%258F%25E6%2597%25A5%25E4%25B8%2580%25E9%25A2%2598-lc392%25E5%2588%25A4%25E6%2596%25AD%25E5%25AD%2590%25E5%25BA%258F%25E5%2588%2597%2F">
           <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2Fleetcode-%25E6%25AF%258F%25E6%2597%25A5%25E4%25B8%2580%25E9%25A2%2598-lc329%25E7%259F%25A9%25E9%2598%25B5%25E4%25B8%25AD%25E7%259A%2584%25E6%259C%2580%25E9%2595%25BF%25E9%2580%2592%25E5%25A2%259E%25E8%25B7%25AF%25E5%25BE%2584%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2Fleetcode-%25E6%25AF%258F%25E6%2597%25A5%25E4%25B8%2580%25E9%25A2%2598-lc392%25E5%2588%25A4%25E6%2596%25AD%25E5%25AD%2590%25E5%25BA%258F%25E5%2588%2597%2F">
           <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2Fleetcode-%25E6%25AF%258F%25E6%2597%25A5%25E4%25B8%2580%25E9%25A2%2598-lc329%25E7%259F%25A9%25E9%2598%25B5%25E4%25B8%25AD%25E7%259A%2584%25E6%259C%2580%25E9%2595%25BF%25E9%2580%2592%25E5%25A2%259E%25E8%25B7%25AF%25E5%25BE%2584%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2Fleetcode-%25E6%25AF%258F%25E6%2597%25A5%25E4%25B8%2580%25E9%25A2%2598-lc392%25E5%2588%25A4%25E6%2596%25AD%25E5%25AD%2590%25E5%25BA%258F%25E5%2588%2597%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -723,9 +691,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/rongdai430.github.io\/2020\/07\/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84\/';
+          this.page.url = 'https:\/\/rongdai430.github.io\/2020\/07\/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97\/';
           
-            this.page.identifier = '\/2020\/07\/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc329%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E8%B7%AF%E5%BE%84\/'
+            this.page.identifier = '\/2020\/07\/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc392%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97\/'
           
         };
         (function() {
