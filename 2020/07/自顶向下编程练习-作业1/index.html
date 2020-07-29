@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.74.2 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Forever 98">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自顶向下编程练习-作业1">
+<meta name="twitter:title" content="自顶向下编程练习-作业1">
+<meta property="og:url" content="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+<meta property="twitter:url" content="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+<meta property="og:site_name" content="RD的修行之路">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2020-07-29T15:54:29">
+  
+  
+    <meta property="article:modified_time" content="2020-07-29T15:54:29">
+  
+  
+  
+    
+      <meta property="article:section" content="计算机网络">
+    
+      <meta property="article:section" content="自顶向下方法">
+    
+  
+  
+    
+      <meta property="article:tag" content="Computer Networking">
+    
+      <meta property="article:tag" content="python">
+    
+      <meta property="article:tag" content="socket">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/10feed9bff098424fbf41c6692232d7d?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/10feed9bff098424fbf41c6692232d7d?s=640">
+
+
+    <title>自顶向下编程练习-作业1</title>
+
+    <link rel="icon" href="https://rongdai430.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://rongdai430.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://rongdai430.github.io/">RD的修行之路</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://rongdai430.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/10feed9bff098424fbf41c6692232d7d?s=90" alt="作者的图片" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://rongdai430.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/10feed9bff098424fbf41c6692232d7d?s=110" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Forever 98</h4>
+        
+          <h5 class="sidebar-profile-bio">Sink or Swim</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://rongdai430.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://rongdai430.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://rongdai430.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://rongdai430.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://rongdai430.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://rongdai430.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      自顶向下编程练习-作业1
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2020-07-29T15:54:29&#43;08:00">
+        
+  七月 29, 2020
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://rongdai430.github.io/categories/%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bd%91%e7%bb%9c">计算机网络</a>, 
+    
+      <a class="category-link" href="https://rongdai430.github.io/categories/%e8%87%aa%e9%a1%b6%e5%90%91%e4%b8%8b%e6%96%b9%e6%b3%95">自顶向下方法</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <!-- raw HTML omitted -->
+<p>本系列是《计算机网络——自顶向下方法》中关于编程作业的解答，有详细的注释参考。</p>
+<p>在本实验中，您将学习Python中TCP连接的套接字编程的基础知识：如何创建套接字，将其绑定到特定的地址和端口，以及发送和接收HTTP数据包。您还将学习一些HTTP首部格式的基础知识。</p>
+<p>您将开发一个处理一个HTTP请求的Web服务器。您的Web服务器应该接受并解析HTTP请求，然后从服务器的文件系统获取所请求的文件，创建一个由响应文件组成的HTTP响应消息，前面是首部行，然后将响应直接发送给客户端。如果请求的文件不存在于服务器中，则服务器应该向客户端发送“404 Not Found”差错报文。</p>
+<p><strong>初始版本：</strong></p>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight py language-py">
+  <figcaption>
+    
+      <span>web_server1</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-py"><code class="py">#服务器端程序
+from socket import *
+#服务器的端口
+server_port = 430
+
+#建立套接字，第一个参数代表底层网络使用的是IPv4，第二个参数是指这是一个TCP套接字
+serverSocket = socket(AF_INET, SOCK_STREAM)
+#绑定TCP端口
+serverSocket.bind((&#39;&#39;, server_port))
+#让服务器开始聆听客户的TCP连接请求，参数为请求连接的最大数
+serverSocket.listen(1)
+
+while(True):
+    print(&#39;Ready to listen...&#39;)
+    #accept()函数用于接受到客户的请求
+    connectionSocket, addr = serverSocket.accept()
+    print(&#39;Get a guest!&#39;)
+    try:
+        #获取客户发送的报文，1024为缓冲区大小
+        message = connectionSocket.recv(1024)
+        #客户端HTTP请求报文的请求行（第一行）为
+        #方法 URL 地址 版本
+        #GET /HelloWorld.html HTTP/1.1\r\n
+        #由此格式可以进行文件读写data
+        filename = message.split()[1]
+        f = open(filename[1:])
+        data = f.read()
+
+        #写入服务器端的HTTP响应报文
+        #格式为
+        #版本 状态码 短语
+        #首部行
+        #实体
+        header = &#39;HTTP/1.1 200 OK\n&#39; \
+                 &#39;Connection: close\n&#39; \
+                 &#39;Content-Type: text/html\n&#39; \
+                 &#39;Content-Length: %d \n\n&#39; %(len(data))
+        #发送响应报文头部
+        connectionSocket.send(header.encode())
+    
+        #发送文章，即实体部分
+        for i in range(0, len(data)):
+            connectionSocket.send(data[i].encode())
+        connectionSocket.close()
+    
+    except IOError:
+        #发生IO错误时，也就是找不到相关的文档时
+        header = &#39;HTTP/1.1 404 Found&#39;
+        connectionSocket.send(header.encode())
+        connectionSocket.close()
+serverSocket.close()</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p><strong>实验结果：</strong></p>
+<p>运行服务器端程序，打开浏览器输入http://localhost:430/HelloWorld.html 即可获得相应内容。</p>
+<p><img src="https://rongdai430.github.io/cn/0729_1.jpg" alt=""></p>
+<p><strong>可选练习1</strong></p>
+<p>目前，这个Web服务器一次只处理一个HTTP请求。请实现一个能够同时处理多个请求的多线程服务器。使用线程，首先创建一个主线程，在固定端口监听客户端请求。当从客户端收到TCP连接请求时，它将通过另一个端口建立TCP连接，并在另外的单独线程中为客户端请求提供服务。这样在每个请求/响应对的独立线程中将有一个独立的TCP连接。</p>
+<ul>
+<li>
+<p>在程序中使用了python中的threading模块建立线程</p>
+<p>p = threading.Thread(target = myfunc, args = (connectionSocket, addr))</p>
+<p>传入函数名，和相应的传入函数的参数。</p>
+</li>
+</ul>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight py language-py">
+  <figcaption>
+    
+      <span>web_server2</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-py"><code class="py">from socket import *
+import threading
+server_port = 430
+serverSocket = socket(AF_INET, SOCK_STREAM)
+serverSocket.bind((&#39;&#39;, server_port))
+serverSocket.listen(1)
+
+#传入客户端的套接字
+def myfunc(conSocket, addr):
+    print(&#39;dealing with client PID {}\n&#39;.format(addr))
+    try:
+        message = conSocket.recv(1024)
+        print(message)
+        filename = message.split()[1]
+        f = open(filename[1:])
+        data = f.read()
+        f.close()
+        header = &#39;HTTP/1.1 200 OK\n&#39; \
+                 &#39;Connection: close\n&#39; \
+                 &#39;Content-Type: text/html\n&#39; \
+                 &#39;Content-Length: %d \n\n&#39; % (len(data))
+        conSocket.send(header.encode())
+        conSocket.send(data.encode())
+
+        conSocket.close()
+    except IOError:
+        header = &#39;HTTP/1.1 404 NOT FOUND&#39;
+        conSocket.send(header.encode())
+        conSocket.close()
+
+while(True):
+    print(&#39;Ready to listen...&#39;)
+    connectionSocket, addr = serverSocket.accept()
+    #使用threading线程管理实现目标，使用元组传递函数和函数的参数
+    p = threading.Thread(target = myfunc, args = (connectionSocket, addr))
+    p.start()
+
+sercerSocket.close()</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p><strong>可选练习2</strong></p>
+<p>不使用浏览器，编写自己的HTTP客户端来测试你的服务器。您的客户端将使用一个TCP连接用于连接到服务器，向服务器发送HTTP请求，并将服务器响应显示出来。您可以假定发送的HTTP请求将使用GET方法。 客户端应使用命令行参数指定服务器IP地址或主机名，服务器正在监听的端口，以及被请求对象在服务器上的路径。以下是运行客户端的输入命令格式。</p>
+<blockquote>
+<p>python client.py server_host server_port filename</p>
+</blockquote>
+<ul>
+<li>命令行的输入用sys.argv[]获取</li>
+<li>需要不断等待获得的数据，直到为空时，即没有获得新的报文时，结束</li>
+</ul>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight py language-py">
+  <figcaption>
+    
+      <span>client1</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-py"><code class="py">import sys
+from socket import *
+serverName = sys.argv[1]
+serverPort = int(sys.argv[2])
+
+#客户端套接字
+clientSocket = socket(AF_INET, SOCK_STREAM)
+#利用connect函数建立客户端与服务器的连接
+clientSocket.connect((serverName, serverPort))
+header = &#39;GET /HelloWorld.html HTTP/1.1\r\n&#39;
+clientSocket.send(header.encode())
+data = &#39; &#39;
+while data:
+    data = clientSocket.recv(1024)
+    print(data.decode())
+clientSocket.close()</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+<p><strong>实验结果</strong></p>
+<p>运行服务器端程序web_server1.py或web_server2.py均可，在命令行提示符中运行</p>
+<blockquote>
+<p>python client1.py localhost 430</p>
+</blockquote>
+<p>得到的程序输出为</p>
+<pre><code>
+(base) F:\computer_networking\work1&gt;python client1.py localhost 430
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: text/html
+Content-Length: 25
+
+
+&lt;head&gt;Hello world!&lt;/head&gt;
+</code></pre>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/computer-networking/">Computer Networking</a>
+
+  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/python/">python</a>
+
+  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/socket/">socket</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc104%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" data-tooltip="Leetcode-每日一题-lc104二叉树的最大深度">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 Forever 98. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc104%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" data-tooltip="Leetcode-每日一题-lc104二叉树的最大深度">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A1%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A1%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A1%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/10feed9bff098424fbf41c6692232d7d?s=110" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Forever 98</h4>
+    
+      <div id="about-card-bio">Sink or Swim</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://rongdai430.github.io/images/mycover.jpg');"></div>
+    
+  
+
+
+    
+
+
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      CommonHTML: { linebreaks: { automatic: true } },
+      tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+      messageStyle: 'none'
+    });
+  </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>  
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://rongdai430.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/rongdai430.github.io\/2020\/07\/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1\/';
+          
+            this.page.identifier = '\/2020\/07\/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
