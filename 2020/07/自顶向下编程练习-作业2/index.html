@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自顶向下编程练习-作业1">
-<meta name="twitter:title" content="自顶向下编程练习-作业1">
-<meta property="og:url" content="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
-<meta property="twitter:url" content="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+<meta property="og:title" content="自顶向下编程练习-作业2">
+<meta name="twitter:title" content="自顶向下编程练习-作业2">
+<meta property="og:url" content="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
+<meta property="twitter:url" content="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
 <meta property="og:site_name" content="RD的修行之路">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-07-29T15:54:29">
+    <meta property="article:published_time" content="2020-07-30T09:56:04">
   
   
-    <meta property="article:modified_time" content="2020-07-29T15:54:29">
+    <meta property="article:modified_time" content="2020-07-30T09:56:04">
   
   
   
@@ -44,7 +44,7 @@
     
       <meta property="article:tag" content="socket">
     
-      <meta property="article:tag" content="TCP">
+      <meta property="article:tag" content="UDP">
     
   
 
@@ -65,14 +65,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/10feed9bff098424fbf41c6692232d7d?s=640">
 
 
-    <title>自顶向下编程练习-作业1</title>
+    <title>自顶向下编程练习-作业2</title>
 
     <link rel="icon" href="https://rongdai430.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+    <link rel="canonical" href="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -212,15 +212,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      自顶向下编程练习-作业1
+      自顶向下编程练习-作业2
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-07-29T15:54:29&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-07-30T09:56:04&#43;08:00">
         
-  七月 29, 2020
+  七月 30, 2020
 
       </time>
     
@@ -242,11 +242,13 @@
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <!-- raw HTML omitted -->
-<p>本系列是《计算机网络——自顶向下方法》中关于编程作业的解答，有详细的注释参考。</p>
-<h2 id="套接字编程作业1web服务器">套接字编程作业1：Web服务器</h2>
-<p>在本实验中，您将学习Python中TCP连接的套接字编程的基础知识：如何创建套接字，将其绑定到特定的地址和端口，以及发送和接收HTTP数据包。您还将学习一些HTTP首部格式的基础知识。</p>
-<p>您将开发一个处理一个HTTP请求的Web服务器。您的Web服务器应该接受并解析HTTP请求，然后从服务器的文件系统获取所请求的文件，创建一个由响应文件组成的HTTP响应消息，前面是首部行，然后将响应直接发送给客户端。如果请求的文件不存在于服务器中，则服务器应该向客户端发送“404 Not Found”差错报文。</p>
-<p><strong>初始版本：</strong></p>
+<h2 id="套接字编程作业2udp-ping-程序">套接字编程作业2：UDP ping 程序</h2>
+<p>在本实验中，您将学习使用Python进行UDP套接字编程的基础知识。您将学习如何使用UDP套接字发送和接收数据报，以及如何设置适当的套接字超时。在实验中，您将熟悉Ping应用程序及其在计算统计信息（如丢包率）中的作用。</p>
+<p>您首先需要研究一个用Python编写的简单的ping服务器程序，并实现对应的客户端程序。这些程序提供的功能类似于现代操作系统中可用的标准ping程序功能。然而，我们的程序使用更简单的UDP协议，而不是标准互联网控制消息协议（ICMP）来进行通信。 ping协议允许客户端机器发送一个数据包到远程机器，并使远程机器将数据包返回到客户（称为回显）的操作。另外，ping协议允许主机计算它到其他机器的往返时间。</p>
+<p>以下是Ping服务器程序的完整代码。你的任务是写出Ping客户端程序。</p>
+<h3 id="服务器代码">服务器代码</h3>
+<p>以下代码完整实现了一个ping服务器。您需要在运行客户端程序之前编译并运行此代码。<em>而且您不需要修改此代码。</em></p>
+<p>在这个服务器代码中，30％的客户端的数据包会被模拟丢失。你应该仔细研究这个代码，它将帮助你编写ping客户端。</p>
 
   
     
@@ -261,160 +263,53 @@
 <figure class="highlight py language-py">
   <figcaption>
     
-      <span>web_server1</span>
+      <span>server</span>
     
   </figcaption>
   <table>
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-py"><code class="py">#服务器端程序
-from socket import *
-#服务器的端口
-server_port = 430
-
-#建立套接字，第一个参数代表底层网络使用的是IPv4，第二个参数是指这是一个TCP套接字
-serverSocket = socket(AF_INET, SOCK_STREAM)
-#绑定TCP端口
-serverSocket.bind((&#39;&#39;, server_port))
-#让服务器开始聆听客户的TCP连接请求，参数为请求连接的最大数
-serverSocket.listen(1)
-
-while(True):
-    print(&#39;Ready to listen...&#39;)
-    #accept()函数用于接受到客户的请求
-    connectionSocket, addr = serverSocket.accept()
-    print(&#39;Get a guest!&#39;)
-    try:
-        #获取客户发送的报文，1024为缓冲区大小
-        message = connectionSocket.recv(1024)
-        #客户端HTTP请求报文的请求行（第一行）为
-        #方法 URL 地址 版本
-        #GET /HelloWorld.html HTTP/1.1\r\n
-        #由此格式可以进行文件读写data
-        filename = message.split()[1]
-        f = open(filename[1:])
-        data = f.read()
-
-        #写入服务器端的HTTP响应报文
-        #格式为
-        #版本 状态码 短语
-        #首部行
-        #实体
-        header = &#39;HTTP/1.1 200 OK\n&#39; \
-                 &#39;Connection: close\n&#39; \
-                 &#39;Content-Type: text/html\n&#39; \
-                 &#39;Content-Length: %d \n\n&#39; %(len(data))
-        #发送响应报文头部
-        connectionSocket.send(header.encode())
-    
-        #发送文章，即实体部分
-        for i in range(0, len(data)):
-            connectionSocket.send(data[i].encode())
-        connectionSocket.close()
-    
-    except IOError:
-        #发生IO错误时，也就是找不到相关的文档时
-        header = &#39;HTTP/1.1 404 Found&#39;
-        connectionSocket.send(header.encode())
-        connectionSocket.close()
-serverSocket.close()</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-<p><strong>实验结果：</strong></p>
-<p>运行服务器端程序，打开浏览器输入http://localhost:430/HelloWorld.html 即可获得相应内容。</p>
-<p><img src="https://rongdai430.github.io/cn/0729_1.jpg" alt=""></p>
-<p><strong>可选练习1</strong></p>
-<p>目前，这个Web服务器一次只处理一个HTTP请求。请实现一个能够同时处理多个请求的多线程服务器。使用线程，首先创建一个主线程，在固定端口监听客户端请求。当从客户端收到TCP连接请求时，它将通过另一个端口建立TCP连接，并在另外的单独线程中为客户端请求提供服务。这样在每个请求/响应对的独立线程中将有一个独立的TCP连接。</p>
-<ul>
-<li>
-<p>在程序中使用了python中的threading模块建立线程</p>
-<p>p = threading.Thread(target = myfunc, args = (connectionSocket, addr))</p>
-<p>传入函数名，和相应的传入函数的参数。</p>
-</li>
-</ul>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight py language-py">
-  <figcaption>
-    
-      <span>web_server2</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre>
         </td>
         <td class="code">
           <pre class="code-highlight language-py"><code class="py">from socket import *
-import threading
-server_port = 430
-serverSocket = socket(AF_INET, SOCK_STREAM)
-serverSocket.bind((&#39;&#39;, server_port))
-serverSocket.listen(1)
 
-#传入客户端的套接字
-def myfunc(conSocket, addr):
-    print(&#39;dealing with client PID {}\n&#39;.format(addr))
-    try:
-        message = conSocket.recv(1024)
-        print(message)
-        filename = message.split()[1]
-        f = open(filename[1:])
-        data = f.read()
-        f.close()
-        header = &#39;HTTP/1.1 200 OK\n&#39; \
-                 &#39;Connection: close\n&#39; \
-                 &#39;Content-Type: text/html\n&#39; \
-                 &#39;Content-Length: %d \n\n&#39; % (len(data))
-        conSocket.send(header.encode())
-        conSocket.send(data.encode())
+#建立UDP服务器端连接套接字
+#UDP套接字中要使用SOCK_DGRAM
+serverSocket = socket(AF_INET, SOCK_DGRAM)
+serverSocket.bind((&#39;&#39;, 730))
 
-        conSocket.close()
-    except IOError:
-        header = &#39;HTTP/1.1 404 NOT FOUND&#39;
-        conSocket.send(header.encode())
-        conSocket.close()
-
-while(True):
-    print(&#39;Ready to listen...&#39;)
-    connectionSocket, addr = serverSocket.accept()
-    #使用threading线程管理实现目标，使用元组传递函数和函数的参数
-    p = threading.Thread(target = myfunc, args = (connectionSocket, addr))
-    p.start()
-
-sercerSocket.close()</code></pre>
+while True:
+   rand = random.randint(0, 10)
+   #获取客户发送的报文以及地址
+   message, address = serverSocket.recvfrom(1024)
+   #将获得的报文大写
+   message = message.upper()
+   #随机进行数据报的丢失
+   if rand &lt; 4:
+      continue
+   #将报文传输回客户端
+   serverSocket.sendto(message, address)</code></pre>
         </td>
       </tr>
     </tbody>
   </table>
 </figure>
-<p><strong>可选练习2</strong></p>
-<p>不使用浏览器，编写自己的HTTP客户端来测试你的服务器。您的客户端将使用一个TCP连接用于连接到服务器，向服务器发送HTTP请求，并将服务器响应显示出来。您可以假定发送的HTTP请求将使用GET方法。 客户端应使用命令行参数指定服务器IP地址或主机名，服务器正在监听的端口，以及被请求对象在服务器上的路径。以下是运行客户端的输入命令格式。</p>
-<blockquote>
-<p>python client.py server_host server_port filename</p>
-</blockquote>
-<ul>
-<li>命令行的输入用sys.argv[]获取</li>
-<li>需要不断等待获得的数据，直到为空时，即没有获得新的报文时，结束</li>
-</ul>
+<p>服务器程序在一个无限循环中监听到来的UDP数据包。当数据包到达时，如果生成一个随机整数大于或等于4，则服务器将数字转为大写并将其发送回客户端。</p>
+<h3 id="数据包丢失">数据包丢失</h3>
+<p>UDP为应用程序提供了不可靠的传输服务。消息可能因为路由器队列溢出，硬件错误或其他原因，而在网络中丢失。但由于在内网中很丢包甚至不丢包，所以在本实验室的服务器程序添加人为损失来模拟网络丢包的影响。服务器创建一个随机整数，由它确定传入的数据包是否丢失。</p>
+<h3 id="客户端代码">客户端代码</h3>
+<p>您需要实现以下客户端程序。</p>
+<p>客户端向服务器发送10次ping。因为UDP是不可靠的协议，所以从客户端发送到服务器的数据包可能在网络中丢失。因此，客户端不能无限期地等待ping消息的回复。客户等待服务器回答的时间至多为一秒，如果在一秒内没有收到回复，您的客户端程序应该假定数据包在网络传输期间丢失。您需要查找Python文档，以了解如何在数据报套接字上设置超时值。</p>
+<p>具体来说，您的客户端程序应该</p>
+<ol>
+<li>使用UDP发送ping消息（注意：不同于TCP，您不需要首先建立连接，因为UDP是无连接协议。）</li>
+<li>从服务器输出响应消息</li>
+<li>如果从服务器受到响应，则计算并输出每个数据包的往返时延（RTT）（以秒为单位），</li>
+<li>否则输出“请求超时”</li>
+</ol>
+<p>在开发过程中，您应该先在计算机上运行<code>UDPPingerServer.py</code>，并通过向<code>localhost</code>（或127.0.0.1）发送数据包来测试客户端。调试完成代码后，您应该能看到ping服务器和ping客户端在不同机器上通过网络进行通信。</p>
 
   
     
@@ -429,53 +324,47 @@ sercerSocket.close()</code></pre>
 <figure class="highlight py language-py">
   <figcaption>
     
-      <span>client1</span>
+      <span>udpping</span>
     
   </figcaption>
   <table>
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language-py"><code class="py">import sys
-from socket import *
-serverName = sys.argv[1]
-serverPort = int(sys.argv[2])
+          <pre class="code-highlight language-py"><code class="py">from socket import *
+import time
 
-#客户端套接字
-clientSocket = socket(AF_INET, SOCK_STREAM)
-#利用connect函数建立客户端与服务器的连接
-clientSocket.connect((serverName, serverPort))
-header = &#39;GET /HelloWorld.html HTTP/1.1\r\n&#39;
-clientSocket.send(header.encode())
-data = &#39; &#39;
-while data:
-    data = clientSocket.recv(1024)
-    print(data.decode())
+server_name = &#39;localhost&#39;
+server_port = 730
+clientSocket = socket(AF_INET, SOCK_DGRAM)
+#设置套接字超时设置
+clientSocket.settimeout(1)
+
+for i in range(0,10):
+    sendTime = time.time()
+    message = (&#39;This is Message %d&#39; %(i&#43;1)).encode()
+    try:
+        #客户端利用UDP套接字发送至服务器端
+        clientSocket.sendto(message, (server_name,server_port))
+        #获得返回值
+        modif, ser_addr = clientSocket.recvfrom(1024)
+        rtt = time.time() - sendTime
+        print(&#39;Sequence %d: Reply from %s RTT = %.3fs&#39; % (i &#43; 1, server_name, rtt))
+        print(&#39;Content %s&#39; %(modif))
+    except Exception as e:
+        print(&#39;Sequence %d: Out of time&#39; %(i&#43;1))
 clientSocket.close()</code></pre>
         </td>
       </tr>
     </tbody>
   </table>
 </figure>
-<p><strong>实验结果</strong></p>
-<p>运行服务器端程序web_server1.py或web_server2.py均可，在命令行提示符中运行</p>
-<blockquote>
-<p>python client1.py localhost 430</p>
-</blockquote>
-<p>得到的程序输出为</p>
-<pre><code>
-(base) F:\computer_networking\work1&gt;python client1.py localhost 430
-HTTP/1.1 200 OK
-Connection: close
-Content-Type: text/html
-Content-Length: 25
-
-
-&lt;head&gt;Hello world!&lt;/head&gt;
-</code></pre>
+<p><strong>实验结果：</strong></p>
+<p>运行服务器端程序server.py，在命令行键入python udpping.py，可以得到如下的输出结果，即UDP ping结果。</p>
+<p><img src="https://rongdai430.github.io/cn/0730_1.jpg" alt=""></p>
               
             </div>
           </div>
@@ -493,7 +382,7 @@ Content-Length: 25
 
   <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/socket/">socket</a>
 
-  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/tcp/">TCP</a>
+  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/udp/">UDP</a>
 
                   </div>
                 
@@ -506,7 +395,7 @@ Content-Length: 25
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc343%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/" data-tooltip="Leetcode-每日一题-lc343整数拆分">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -514,7 +403,7 @@ Content-Length: 25
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc104%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" data-tooltip="Leetcode-每日一题-lc104二叉树的最大深度">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc343%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/" data-tooltip="Leetcode-每日一题-lc343整数拆分">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -532,19 +421,19 @@ Content-Length: 25
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -592,7 +481,7 @@ Content-Length: 25
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc343%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/" data-tooltip="Leetcode-每日一题-lc343整数拆分">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -600,7 +489,7 @@ Content-Length: 25
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc104%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6/" data-tooltip="Leetcode-每日一题-lc104二叉树的最大深度">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc343%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/" data-tooltip="Leetcode-每日一题-lc343整数拆分">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -618,19 +507,19 @@ Content-Length: 25
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -660,19 +549,19 @@ Content-Length: 25
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A1%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A2%2F">
           <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A1%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A2%2F">
           <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A1%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A2%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -785,9 +674,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/rongdai430.github.io\/2020\/07\/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1\/';
+          this.page.url = 'https:\/\/rongdai430.github.io\/2020\/07\/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2\/';
           
-            this.page.identifier = '\/2020\/07\/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1\/'
+            this.page.identifier = '\/2020\/07\/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2\/'
           
         };
         (function() {

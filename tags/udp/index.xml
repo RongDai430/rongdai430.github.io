@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>socket on RD的修行之路</title>
-    <link>https://rongdai430.github.io/tags/socket/</link>
-    <description>Recent content in socket on RD的修行之路</description>
+    <title>UDP on RD的修行之路</title>
+    <link>https://rongdai430.github.io/tags/udp/</link>
+    <description>Recent content in UDP on RD的修行之路</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 30 Jul 2020 09:56:04 +0800</lastBuildDate>
     
-	<atom:link href="https://rongdai430.github.io/tags/socket/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://rongdai430.github.io/tags/udp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,15 +17,6 @@
       <pubDate>Thu, 30 Jul 2020 09:56:04 +0800</pubDate>
       
       <guid>https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>自顶向下编程练习-作业1</title>
-      <link>https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/</link>
-      <pubDate>Wed, 29 Jul 2020 15:54:29 +0800</pubDate>
-      
-      <guid>https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A1/</guid>
       <description></description>
     </item>
     
