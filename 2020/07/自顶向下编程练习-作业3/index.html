@@ -13,20 +13,20 @@
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自顶向下编程练习-作业2">
-<meta name="twitter:title" content="自顶向下编程练习-作业2">
-<meta property="og:url" content="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
-<meta property="twitter:url" content="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
+<meta property="og:title" content="自顶向下编程练习-作业3">
+<meta name="twitter:title" content="自顶向下编程练习-作业3">
+<meta property="og:url" content="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/">
+<meta property="twitter:url" content="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/">
 <meta property="og:site_name" content="RD的修行之路">
 <meta property="og:description" content="">
 <meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2020-07-30T09:56:04">
+    <meta property="article:published_time" content="2020-07-30T11:08:43">
   
   
-    <meta property="article:modified_time" content="2020-07-30T09:56:04">
+    <meta property="article:modified_time" content="2020-07-30T11:08:43">
   
   
   
@@ -44,7 +44,9 @@
     
       <meta property="article:tag" content="socket">
     
-      <meta property="article:tag" content="UDP">
+      <meta property="article:tag" content="TCP">
+    
+      <meta property="article:tag" content="SMTP">
     
   
 
@@ -65,14 +67,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/10feed9bff098424fbf41c6692232d7d?s=640">
 
 
-    <title>自顶向下编程练习-作业2</title>
+    <title>自顶向下编程练习-作业3</title>
 
     <link rel="icon" href="https://rongdai430.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
+    <link rel="canonical" href="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -212,13 +214,13 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      自顶向下编程练习-作业2
+      自顶向下编程练习-作业3
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-07-30T09:56:04&#43;08:00">
+      <time itemprop="datePublished" datetime="2020-07-30T11:08:43&#43;08:00">
         
   七月 30, 2020
 
@@ -242,13 +244,42 @@
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
               <!-- raw HTML omitted -->
-<h2 id="套接字编程作业2udp-ping-程序">套接字编程作业2：UDP ping 程序</h2>
-<p>在本实验中，您将学习使用Python进行UDP套接字编程的基础知识。您将学习如何使用UDP套接字发送和接收数据报，以及如何设置适当的套接字超时。在实验中，您将熟悉Ping应用程序及其在计算统计信息（如丢包率）中的作用。</p>
-<p>您首先需要研究一个用Python编写的简单的ping服务器程序，并实现对应的客户端程序。这些程序提供的功能类似于现代操作系统中可用的标准ping程序功能。然而，我们的程序使用更简单的UDP协议，而不是标准互联网控制消息协议（ICMP）来进行通信。 ping协议允许客户端机器发送一个数据包到远程机器，并使远程机器将数据包返回到客户（称为回显）的操作。另外，ping协议允许主机计算它到其他机器的往返时间。</p>
-<p>以下是Ping服务器程序的完整代码。你的任务是写出Ping客户端程序。</p>
-<h3 id="服务器代码">服务器代码</h3>
-<p>以下代码完整实现了一个ping服务器。您需要在运行客户端程序之前编译并运行此代码。<em>而且您不需要修改此代码。</em></p>
-<p>在这个服务器代码中，30％的客户端的数据包会被模拟丢失。你应该仔细研究这个代码，它将帮助你编写ping客户端。</p>
+<h1 id="套接字编程作业3邮件客户端">套接字编程作业3：邮件客户端</h1>
+<p>这个编程作业的目的是创建一个向任何接收方发送电子邮件的简单邮件客户。你的客户将必须与邮件服务器（如谷歌的电子邮件服务器）创建一个TCP连接，使用SMTP协议与该邮件服务器进行交谈，经该邮件服务器向某接收方（如你的朋友）发送一个电子邮件报文，最后关闭与该邮件服务器的TCP连接。</p>
+<p>对本作业，配套Web站点为你的客户提供了框架代码。你的任务是完善该代码并通过向不同的用户账户发送电子邮件来测试你的客户。你也可以尝试通过不同的服务器（例如谷歌的邮件服务器和你所在大学的邮件服务器）进行发送。</p>
+<p><strong>SMTP状态码</strong></p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th align="left">英文描述</th>
+<th>中文描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>220  </td>
+<td align="left">Service ready</td>
+<td>服务就绪</td>
+</tr>
+<tr>
+<td>250</td>
+<td align="left">Requested mail action okay, completed</td>
+<td>所要求的邮件动作完成，可以继续邮件对话。通常在EHLO/HELO命令后会通过“250-”来描述服务器所支持的特性。</td>
+</tr>
+<tr>
+<td>354</td>
+<td align="left">Start mail input; end with &lt;CRLF&gt;.&lt;CRLF&gt;</td>
+<td>开始接收邮件内容输入，以&lt;CRLF&gt;.&lt;CRLF&gt;(即单行一个点)结束输入。</td>
+</tr>
+<tr>
+<td>221</td>
+<td align="left">Service closing transmission channel</td>
+<td>服务关闭了传输通道。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>客户端代码</strong></p>
 
   
     
@@ -263,99 +294,93 @@
 <figure class="highlight py language-py">
   <figcaption>
     
-      <span>server</span>
+      <span>smtp</span>
     
   </figcaption>
   <table>
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre>
         </td>
         <td class="code">
           <pre class="code-highlight language-py"><code class="py">from socket import *
+import base64
 
-#建立UDP服务器端连接套接字
-#UDP套接字中要使用SOCK_DGRAM
-serverSocket = socket(AF_INET, SOCK_DGRAM)
-serverSocket.bind((&#39;&#39;, 730))
+msg = &#39;I love computer networking!&#39;
+#默认的SMTP报文结尾
+endmsg = &#39;\r\n.\r\n&#39;
 
-while True:
-   rand = random.randint(0, 10)
-   #获取客户发送的报文以及地址
-   message, address = serverSocket.recvfrom(1024)
-   #将获得的报文大写
-   message = message.upper()
-   #随机进行数据报的丢失
-   if rand &lt; 4:
-      continue
-   #将报文传输回客户端
-   serverSocket.sendto(message, address)</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-<p>服务器程序在一个无限循环中监听到来的UDP数据包。当数据包到达时，如果生成一个随机整数大于或等于4，则服务器将数字转为大写并将其发送回客户端。</p>
-<h3 id="数据包丢失">数据包丢失</h3>
-<p>UDP为应用程序提供了不可靠的传输服务。消息可能因为路由器队列溢出，硬件错误或其他原因，而在网络中丢失。但由于在内网中很丢包甚至不丢包，所以在本实验室的服务器程序添加人为损失来模拟网络丢包的影响。服务器创建一个随机整数，由它确定传入的数据包是否丢失。</p>
-<h3 id="客户端代码">客户端代码</h3>
-<p>您需要实现以下客户端程序。</p>
-<p>客户端向服务器发送10次ping。因为UDP是不可靠的协议，所以从客户端发送到服务器的数据包可能在网络中丢失。因此，客户端不能无限期地等待ping消息的回复。客户等待服务器回答的时间至多为一秒，如果在一秒内没有收到回复，您的客户端程序应该假定数据包在网络传输期间丢失。您需要查找Python文档，以了解如何在数据报套接字上设置超时值。</p>
-<p>具体来说，您的客户端程序应该</p>
-<ol>
-<li>使用UDP发送ping消息（注意：不同于TCP，您不需要首先建立连接，因为UDP是无连接协议。）</li>
-<li>从服务器输出响应消息</li>
-<li>如果从服务器受到响应，则计算并输出每个数据包的往返时延（RTT）（以秒为单位），</li>
-<li>否则输出“请求超时”</li>
-</ol>
-<p>在开发过程中，您应该先在计算机上运行<code>UDPPingerServer.py</code>，并通过向<code>localhost</code>（或127.0.0.1）发送数据包来测试客户端。调试完成代码后，您应该能看到ping服务器和ping客户端在不同机器上通过网络进行通信。</p>
+mailserver = &#39;smtp.qq.com&#39;
+server_port = 587
 
-  
-    
-  
-  
-    
-  
-  
-  
+fromadd = &#39;9***9@qq.com&#39;
+toaddr = &#39;9***9@qq.com&#39;
+username = &#39;9***9@qq.com&#39;
+pwd = &#39;j***g&#39;
 
+clientSocket = socket(AF_INET, SOCK_STREAM)
+clientSocket.connect((mailserver, server_port))
+#建立与qq邮箱服务器的连接
+#邮箱服务器回复如下
+#220 newxmesmtplogicsvrsza8.qq.com XMail Esmtp QQ Mail Server.
+recv = clientSocket.recv(1024).decode()
+print(recv)
+if(recv[:3] != &#39;220&#39;):
+    print(&#34;服务器未准备就绪&#34;)
 
-<figure class="highlight py language-py">
-  <figcaption>
-    
-      <span>udpping</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-py"><code class="py">from socket import *
-import time
+#发送HELO命令
+helocommand = &#39;HELO RONGD\r\n&#39;
+clientSocket.send(helocommand.encode())
+recv1 = clientSocket.recv(1024).decode()
+print(recv1)
+if(recv1[:3] != &#39;250&#39;):
+    print(&#34;250 reply not received!&#34;)
 
-server_name = &#39;localhost&#39;
-server_port = 730
-clientSocket = socket(AF_INET, SOCK_DGRAM)
-#设置套接字超时设置
-clientSocket.settimeout(1)
+#SMTP规定的客户登陆模块报文
+base64_str = (&#39;\x00&#39; &#43; username &#43; &#39;\x00&#39; &#43; pwd).encode()
+base64_str = base64.b64encode(base64_str)
+authCommand = &#39;AUTH PLAIN &#39;.encode() &#43; base64_str &#43; &#39;\r\n&#39;.encode()
+clientSocket.send(authCommand)
+recv_auth = clientSocket.recv(1024)
+print(recv_auth.decode())
 
-for i in range(0,10):
-    sendTime = time.time()
-    message = (&#39;This is Message %d&#39; %(i&#43;1)).encode()
-    try:
-        #客户端利用UDP套接字发送至服务器端
-        clientSocket.sendto(message, (server_name,server_port))
-        #获得返回值
-        modif, ser_addr = clientSocket.recvfrom(1024)
-        rtt = time.time() - sendTime
-        print(&#39;Sequence %d: Reply from %s RTT = %.3fs&#39; % (i &#43; 1, server_name, rtt))
-        print(&#39;Content %s&#39; %(modif))
-    except Exception as e:
-        print(&#39;Sequence %d: Out of time&#39; %(i&#43;1))
+#模仿书78页的过程进行通信
+mailcommend = &#39;MAIL FROM: &lt;&#39; &#43; fromadd &#43; &#39;&gt;\r\n&#39;
+clientSocket.send(mailcommend.encode())
+recv2 = clientSocket.recv(1024).decode()
+print(recv2)
+
+rcptcommend = &#39;RCPT TO: &lt;&#39; &#43; toaddr &#43; &#39;&gt;\r\n&#39;
+clientSocket.send(rcptcommend.encode())
+recv3 = clientSocket.recv(1024).decode()
+print(recv3)
+
+clientSocket.send(&#39;DATA\r\n&#39;.encode())
+recv4 = clientSocket.recv(1024).decode()
+print(recv4)
+if(recv4[:3] != &#39;354&#39;):
+    print(&#39;354 reply is not received&#39;)
+
+#发送数据
+send_msg = &#39;from: &#39; &#43; fromadd &#43; &#39;\r\n&#39;
+send_msg &#43;= &#39;to: &#39; &#43; toaddr &#43; &#39;\r\n&#39;
+send_msg &#43;= &#39;subject: &#39; &#43; msg &#43; &#39;\r\n&#39;
+send_msg &#43;= &#39;content-type: text/plain\t\n&#39;
+send_msg &#43;= &#39;\r\n&#39; &#43; msg
+clientSocket.send(send_msg.encode())
+
+clientSocket.send(endmsg.encode())
+
+recv5 = clientSocket.recv(1024).decode()
+print(recv5)
+if(recv5[:3] != &#39;250&#39;):
+    print(&#39;250 reply error&#39;)
+
+clientSocket.send(&#39;QUIT\r\n&#39;.encode())
+
+print(clientSocket.recv(1024).decode())
+
 clientSocket.close()</code></pre>
         </td>
       </tr>
@@ -363,8 +388,8 @@ clientSocket.close()</code></pre>
   </table>
 </figure>
 <p><strong>实验结果：</strong></p>
-<p>运行服务器端程序server.py，在命令行键入python udpping.py，可以得到如下的输出结果，即UDP ping结果。</p>
-<p><img src="https://rongdai430.github.io/cn/0730_1.jpg" alt=""></p>
+<p>运行客户端程序smtp.py，在QQ邮箱里可以看到邮件</p>
+<p><img src="https://rongdai430.github.io/cn/0730_2.jpg" alt=""></p>
               
             </div>
           </div>
@@ -382,7 +407,9 @@ clientSocket.close()</code></pre>
 
   <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/socket/">socket</a>
 
-  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/udp/">UDP</a>
+  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/tcp/">TCP</a>
+
+  <a class="tag tag--primary tag--small" href="https://rongdai430.github.io/tags/smtp/">SMTP</a>
 
                   </div>
                 
@@ -395,7 +422,7 @@ clientSocket.close()</code></pre>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/" data-tooltip="自顶向下编程练习-作业3">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -403,7 +430,7 @@ clientSocket.close()</code></pre>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc343%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/" data-tooltip="Leetcode-每日一题-lc343整数拆分">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/" data-tooltip="自顶向下编程练习-作业2">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -421,19 +448,19 @@ clientSocket.close()</code></pre>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -481,7 +508,7 @@ clientSocket.close()</code></pre>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/" data-tooltip="自顶向下编程练习-作业3">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -489,7 +516,7 @@ clientSocket.close()</code></pre>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/leetcode-%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-lc343%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86/" data-tooltip="Leetcode-每日一题-lc343整数拆分">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/" data-tooltip="自顶向下编程练习-作业2">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -507,19 +534,19 @@ clientSocket.close()</code></pre>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://rongdai430.github.io/2020/07/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -549,19 +576,19 @@ clientSocket.close()</code></pre>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A2%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A3%2F">
           <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A2%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A3%2F">
           <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A2%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Frongdai430.github.io%2F2020%2F07%2F%25E8%2587%25AA%25E9%25A1%25B6%25E5%2590%2591%25E4%25B8%258B%25E7%25BC%2596%25E7%25A8%258B%25E7%25BB%2583%25E4%25B9%25A0-%25E4%25BD%259C%25E4%25B8%259A3%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -674,9 +701,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/rongdai430.github.io\/2020\/07\/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2\/';
+          this.page.url = 'https:\/\/rongdai430.github.io\/2020\/07\/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3\/';
           
-            this.page.identifier = '\/2020\/07\/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A2\/'
+            this.page.identifier = '\/2020\/07\/%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%BC%96%E7%A8%8B%E7%BB%83%E4%B9%A0-%E4%BD%9C%E4%B8%9A3\/'
           
         };
         (function() {
